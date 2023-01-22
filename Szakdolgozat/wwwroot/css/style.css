@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../img/Homepage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    font-size: 1.5rem;
+
+    color: white;
+}
+
+a.nav-link,
+a.navbar-brand {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-brand {
+
+    font-family: 'Courier', 'monospace';
+    font-size: 2.5rem !important;
+}
+
+.navbar-toggler,
+.navbar-toggler-icon {
+    color: white;
+}
