@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("../img/Homepage.jpg");
+    background-image: url("assets/img/Homepage.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -33,3 +33,4 @@ a.navbar-brand {
 .navbar-toggler-icon {
     color: white;
 }
+
