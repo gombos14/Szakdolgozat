@@ -26,4 +26,10 @@ a.navbar-brand {
 .navbar-toggler-icon {
     color: white;
 }
+.card {
+    background-color: antiquewhite;
+}
 
+section {
+    padding: 40px;
+}

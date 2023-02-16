@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Norbert\\Desktop\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat.csproj": {}
+    "C:\\Users\\Norbert\\Desktop\\Szakdoga\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Norbert\\Desktop\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat.csproj": {
+    "C:\\Users\\Norbert\\Desktop\\Szakdoga\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Norbert\\Desktop\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat.csproj",
+        "projectUniqueName": "C:\\Users\\Norbert\\Desktop\\Szakdoga\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat.csproj",
         "projectName": "Szakdolgozat",
-        "projectPath": "C:\\Users\\Norbert\\Desktop\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat.csproj",
+        "projectPath": "C:\\Users\\Norbert\\Desktop\\Szakdoga\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat.csproj",
         "packagesPath": "C:\\Users\\Norbert\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Norbert\\Desktop\\Szakdolgozat\\Szakdolgozat\\Szakdolgozat\\obj\\",
+        "outputPath": "C:\\Users\\Norbert\\Desktop\\Szakdoga\\Szakdolgozat\\Szakdolgozat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Norbert\\AppData\\Roaming\\NuGet\\NuGet.Config",
