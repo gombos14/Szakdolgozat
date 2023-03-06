@@ -1,4 +1,38 @@
-﻿<!DOCTYPE html>
+﻿@code {
+
+        const string imagePath = "C:/Users/Norbi/Desktop/Szakdoga/Szakdoga/Szakdolgozat/Szakdolgozat/wwwroot/css/assets/img";
+
+
+    public static List<string> GetImageFiles(string directoryPath)
+    {
+        string[] extensions = { ".jpg", ".jpeg", ".png", ".gif" };
+        IEnumerable<string> imageFiles = Directory.EnumerateFiles(directoryPath, "*.*", SearchOption.AllDirectories).Where(file => extensions.Any(file.ToLower().EndsWith));
+
+        List<string> imageFileNames = imageFiles.Select(file => "../css/assets/img/" + Path.GetFileName(file)).ToList();
+
+        return imageFileNames;
+    }
+
+    public static List<string> GetImageFileNames(string directoryPath)
+    {
+        string[] extensions = { ".jpg", ".jpeg", ".png", ".gif" };
+        IEnumerable<string> imageFiles = Directory.EnumerateFiles(directoryPath, "*.*", SearchOption.AllDirectories)
+                                                .Where(file => extensions.Any(file.ToLower().EndsWith));
+
+        List<string> imageFileNames = imageFiles.Select(file => Path.GetFileNameWithoutExtension(file)).ToList();
+
+        return imageFileNames;
+    }
+    List<string> imageFileNames = GetImageFileNames(imagePath);
+    List<string> images = GetImageFiles(imagePath);
+
+}
+
+
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -53,97 +87,53 @@
             
         </div>
     </section>
+
+
     <section class="first-section">
-        <div class="container">
+            <div class="container">
             <div class="row">
-                <div class="col-sm-3 pb-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../css/assets/img/blackc.jpg" class="card-img-top" alt="" style="height: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Black Chiavari Chiar</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 pb-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../css/assets/img/goldc.jpg" class="card-img-top" alt="" style="height: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Gold Chiavari Chiar</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 pb-4">
+    @code {
+        int counter = 0;
+    }
+              
+    @foreach (string imagePath in images)
+                    
+    {
+        counter++;
+
+        
+                @if (counter % 4 == 0 )
+                {
+                    
+                        <div class="col-sm-3 pt-4">
                         <div class="card" style="width: 18rem;">
-                        <img src="../css/assets/img/antikc.jpg" class="card-img-top" alt="" style="height: 20rem;">
+                            <img src="@imagePath" class="card-img-top" alt="" style="height: 20rem;">
                             <div class="card-body">
-                            <h5 class="card-title">Antique Chiavari Chiar</h5>
-                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
+                                    <h5 class="card-title"> @imageFileNames[images.IndexOf(imagePath)] </h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Add to cart</a>
                             </div>
                         </div>
-                </div>
-                <div class="col-sm-3 pb-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../css/assets/img/silverc.jpg" class="card-img-top" alt="" style="height: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Silver Chiavari Chiar</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
+                
+                } 
+                else {
                 <div class="col-sm-3 pt-4">
                     <div class="card" style="width: 18rem;">
-                        <img src="../css/assets/img/xhatub.jpg" class="card-img-top" alt="" style="height: 20rem;">
+                        <img src="@imagePath" class="card-img-top" alt="" style="height: 20rem;">
                         <div class="card-body">
-                            <h5 class="card-title">Black Cross Back Chiar</h5>
+                                    <h5 class="card-title">@imageFileNames[images.IndexOf(imagePath)]</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn btn-primary">Add to cart</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3 pt-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../css/assets/img/xhatuf.jpg" class="card-img-top" alt="" style="height: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">White Cross Back Chiar</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 pt-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../css/assets/img/farm.png" class="card-img-top" alt="" style="height: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Farmhouse Table</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 pt-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="../css/assets/img/tabla.jpg" class="card-img-top" alt="" style="height: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Event Table</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
+                }
+            
+    }
             </div>
         </div>
     </section>
     
 </body>
 </html>
-
-
-
