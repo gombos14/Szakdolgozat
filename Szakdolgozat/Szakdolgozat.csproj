@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\css\assets\css\**" />
+    <Content Remove="wwwroot\css\assets\css\**" />
+    <EmbeddedResource Remove="wwwroot\css\assets\css\**" />
+    <None Remove="wwwroot\css\assets\css\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\assets\js\script.js" />
+  </ItemGroup>
+
+</Project>
