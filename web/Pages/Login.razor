@@ -1,0 +1,63 @@
+@page "/login"
+@using Szakdolgozat.Data
+@using System.Security.Claims
+
+<EditForm OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="emailInput">Email</label>
+        <InputText class="form-control" id="emailInput" @bind-Value="Email" />
+        <ValidationMessage For="@(() => Email)" />
+    </div>
+
+    <div class="form-group">
+        <label for="passwordInput">Password</label>
+        <InputText class="form-control" id="passwordInput" type="password" @bind-Value="Password" />
+        <ValidationMessage For="@(() => Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Log In</button>
+</EditForm>
+
+@if (loginFailed)
+{
+    <p class="text-danger">Invalid email or password.</p>
+}
+
+@code {
+    private string Email;
+    private string Password;
+    private bool loginFailed = false;
+    
+    [Inject]
+    private UserService userService { get; set; }
+
+    [Inject]
+    private AuthenticationStateProvider authenticationStateProvider { get; set; }
+
+    private async Task HandleValidSubmit()
+    {
+        loginFailed = true;
+    // User user = UserService.AuthenticateUser(Email, Password);
+    //
+    // if (user == null)
+    // {
+    //     loginFailed = true;
+    // }
+    // else
+    // {
+    //     var claims = new List<Claim>
+    //     {
+    //         new Claim(ClaimTypes.Name, user.Email)
+    //     };
+    //     var identity = new ClaimsIdentity(claims, "apiauth_type");
+    //     var userPrincipal = new ClaimsPrincipal(identity);
+    //
+    //     await authenticationStateProvider.SetAuthenticationStateAsync(new AuthenticationState(userPrincipal));
+    //
+    //     // NavigationManager.NavigateTo("/");
+    // }
+    }
+}
